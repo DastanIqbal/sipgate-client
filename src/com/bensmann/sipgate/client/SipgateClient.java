@@ -517,18 +517,18 @@ public final class SipgateClient {
             start.set(Calendar.HOUR_OF_DAY, 0);
             start.set(Calendar.MINUTE, 0);
             start.set(Calendar.SECOND, 0);
-            SipgateHistoryEntry[] he = s.getHistory(new String[]{"4925159086000"}, new String[]{"INCOMING"}, start);
+            SipgateHistoryEntry[] he = s.getHistory(new String[]{"49123456789"}, new String[]{"INCOMING"}, start);
             for (SipgateHistoryEntry e : he) {
                 logger.fine("" + e.toString());
             }
         } catch (Exception e) {
             logger.log(Level.SEVERE, null, e);
         }
-        String[] smsUri = new String[]{"4915156108857"};
+        String[] smsUri = new String[]{"49123456789"};
         Map<?, ?> map = null;
         try {
-            //map = s.sendSms("4925159086000", smsUri, "eine test sms");
-            //map = s.initiateCall("4925159086000", "4915156108857");
+            //map = s.sendSms("49123456789", smsUri, "eine test sms");
+            //map = s.initiateCall("49123456789", "49123456789");
             map = s.getEventList();
             //Object[] arr = (Object[]) map.get("EventList");
             for (Object o : (Object[]) map.get("EventList")) {
